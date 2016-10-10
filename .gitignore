@@ -1,12 +1,101 @@
+### These files should get ignored no matter where they appear.
+
+# Java class file
 *.class
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
 # Package Files #
-*.jar
+#*.jar
 *.war
 *.ear
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# Ignore Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Ignore Precompiled Headers
+*.gch
+*.pch
+
+# Ignore Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Ignore Fortran module files
+*.mod
+
+# Ignore Compiled Static libraries
+# *.lai
+# *.la
+# *.a
+# *.lib
+
+!*.bat
+
+# Ignore Executables
+*.exe
+*.out
+*.app
+
+# Editors leave these lying around
+\#*\#
+.#*
+*~
+*.swp
+
+# Ignore thumbnails and icon cache files created by Windows
+Thumbs.db
+ehthumbs.db
+
+# Ignore some files on Windows
+.DS_Store*
+Icon?
+
+# Ignore folders create by Visual Studio 2015
+/.vs/
+
+# Ignore AStyle backup files
+*.orig
+
+# Ignore Code::Blocks backup files
+*.sav
+
+# Ignore Sublime Text 2 dump files
+*.dump
+
+# Ignore bin and build folders
+/bin
+
+# Ignore Eclipse or VSCode settings files
+/.settings
+
+# Ignore stackdump files on Linux
+*.stackdump
+
+# Ignore log files
+*.log
+
+# Ignore Zip or Rar files
+*.zip
+*.rar
+
+# Other files or folders
+/.metadata
+/169.254.0.1
+/ipch/
+# /cmake/
+/Simulator/
+/Simulator-Coverage/
+/Simulator-Profile/
+/Device-Debug/
+/Device-Coverage/
+/Device-Profile/
+/Device-Release/
