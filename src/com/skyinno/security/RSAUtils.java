@@ -85,7 +85,7 @@ public class RSAUtils {
         keyMap.put(PRIVATE_KEY, privateKey);
         return keyMap;
     }
-    
+
     /**
      * <p>
      * 生成密钥对(公钥和私钥), 默认 keysize 为 1024 位
@@ -95,7 +95,7 @@ public class RSAUtils {
      * @throws Exception
      */
     public static Map<String, Object> genKeyPair() throws Exception {
-    	return genKeyPair(1024);
+        return genKeyPair(1024);
     }
 
     /**
@@ -144,7 +144,7 @@ public class RSAUtils {
         signature.update(data);
         return signature.verify(Base64Utils.decode(sign));
     }
-    
+
     /**
      * <P>
      * 私钥解密
@@ -157,8 +157,8 @@ public class RSAUtils {
      */
     public static byte[] decryptByPrivateKey(byte[] encryptedData, String privateKey, int keysize)
             throws Exception {
-    	// RSA-PKCS#1 v1.5, decrypt block size.
-    	int max_decrypt_block = Math.floorDiv(keysize, 8);
+        // RSA-PKCS#1 v1.5, decrypt block size.
+        int max_decrypt_block = Math.floorDiv(keysize, 8);
         byte[] keyBytes = Base64Utils.decode(privateKey);
         PKCS8EncodedKeySpec pkcs8KeySpec = new PKCS8EncodedKeySpec(keyBytes);
         KeyFactory keyFactory = KeyFactory.getInstance(KEY_ALGORITHM);
@@ -185,7 +185,7 @@ public class RSAUtils {
         out.close();
         return decryptedData;
     }
-    
+
     /**
      * <P>
      * 私钥解密
@@ -199,7 +199,7 @@ public class RSAUtils {
     public static byte[] decryptByPrivateKey(byte[] encryptedData, String privateKey)
             throws Exception {
         return decryptByPrivateKey(encryptedData, privateKey, 1024);
-    }    
+    }
 
     /**
      * <p>
@@ -213,8 +213,8 @@ public class RSAUtils {
      */
     public static byte[] decryptByPublicKey(byte[] encryptedData, String publicKey, int keysize)
             throws Exception {
-    	// RSA-PKCS#1 v1.5, decrypt block size.
-    	int max_decrypt_block = Math.floorDiv(keysize, 8);    	
+        // RSA-PKCS#1 v1.5, decrypt block size.
+        int max_decrypt_block = Math.floorDiv(keysize, 8);
         byte[] keyBytes = Base64Utils.decode(publicKey);
         X509EncodedKeySpec x509KeySpec = new X509EncodedKeySpec(keyBytes);
         KeyFactory keyFactory = KeyFactory.getInstance(KEY_ALGORITHM);
@@ -241,7 +241,7 @@ public class RSAUtils {
         out.close();
         return decryptedData;
     }
-    
+
     /**
      * <p>
      * 公钥解密
@@ -254,7 +254,7 @@ public class RSAUtils {
      */
     public static byte[] decryptByPublicKey(byte[] encryptedData, String publicKey)
             throws Exception {
-    	return decryptByPublicKey(encryptedData, publicKey, 1024);
+        return decryptByPublicKey(encryptedData, publicKey, 1024);
     }
 
     /**
@@ -269,8 +269,8 @@ public class RSAUtils {
      */
     public static byte[] encryptByPublicKey(byte[] data, String publicKey, int keysize)
             throws Exception {
-    	// RSA-PKCS#1 v1.5, encrypt block size.
-    	int max_encrypt_block = Math.floorDiv(keysize, 8) - 11;    	
+        // RSA-PKCS#1 v1.5, encrypt block size.
+        int max_encrypt_block = Math.floorDiv(keysize, 8) - 11;
         byte[] keyBytes = Base64Utils.decode(publicKey);
         X509EncodedKeySpec x509KeySpec = new X509EncodedKeySpec(keyBytes);
         KeyFactory keyFactory = KeyFactory.getInstance(KEY_ALGORITHM);
@@ -298,7 +298,7 @@ public class RSAUtils {
         out.close();
         return encryptedData;
     }
-    
+
     /**
      * <p>
      * 公钥加密
@@ -311,7 +311,7 @@ public class RSAUtils {
      */
     public static byte[] encryptByPublicKey(byte[] data, String publicKey)
             throws Exception {
-    	return encryptByPublicKey(data, publicKey, 1024);
+        return encryptByPublicKey(data, publicKey, 1024);
     }
 
     /**
@@ -326,8 +326,8 @@ public class RSAUtils {
      */
     public static byte[] encryptByPrivateKey(byte[] data, String privateKey, int keysize)
             throws Exception {
-    	// RSA-PKCS#1 v1.5, encrypt block size.
-    	int max_encrypt_block = Math.floorDiv(keysize, 8) - 11;      	
+        // RSA-PKCS#1 v1.5, encrypt block size.
+        int max_encrypt_block = Math.floorDiv(keysize, 8) - 11;
         byte[] keyBytes = Base64Utils.decode(privateKey);
         PKCS8EncodedKeySpec pkcs8KeySpec = new PKCS8EncodedKeySpec(keyBytes);
         KeyFactory keyFactory = KeyFactory.getInstance(KEY_ALGORITHM);
@@ -354,7 +354,7 @@ public class RSAUtils {
         out.close();
         return encryptedData;
     }
-    
+
     /**
      * <p>
      * 私钥加密
@@ -367,7 +367,7 @@ public class RSAUtils {
      */
     public static byte[] encryptByPrivateKey(byte[] data, String privateKey)
             throws Exception {
-    	return encryptByPrivateKey(data, privateKey, 1024);
+        return encryptByPrivateKey(data, privateKey, 1024);
     }
 
     /**

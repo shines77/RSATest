@@ -8,12 +8,12 @@ import java.util.Map;
 
 /**
  * @author ousinka, @modify by shines77
- * 
+ *
  * See: https://my.oschina.net/ousinka/blog/338099
- * 
+ *
  */
 public class RSATester {
-	
+
     static String publicKey;
     static String privateKey;
     static final int keySize = 2048;
@@ -29,10 +29,10 @@ public class RSATester {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }	
-	
+    }
+
     static void test() throws Exception {
-    	String source = "这是一行没有任何意义的文字，你看完了等于没看，不是吗？";
+        String source = "这是一行没有任何意义的文字，你看完了等于没看，不是吗？";
         System.out.println("公钥加密——私钥解密" + "\r\n");
         System.out.println("加密前文字：\r\n" + source + "\r\n");
         byte[] data = source.getBytes();
@@ -44,7 +44,7 @@ public class RSATester {
     }
 
     static void testSign() throws Exception {
-    	String source = "这是一行测试RSA数字签名的无意义文字";
+        String source = "这是一行测试RSA数字签名的无意义文字";
         System.out.println("私钥加密——公钥解密" + "\r\n");
         System.out.println("原文字：\r\n" + source + "\r\n");
         byte[] data = source.getBytes();
@@ -58,15 +58,15 @@ public class RSATester {
         System.out.println("签名：\r\n" + sign + "\r\n");
         boolean status = RSAUtils.verify(encodedData, publicKey, sign);
         System.out.println("验证结果：\r\n" + status + "\r\n");
-    }	
+    }
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) throws Exception {
-		// test
-		test();
-		testSign();
-	}
+    /**
+     * @param args
+     */
+    public static void main(String[] args) throws Exception {
+        // test
+        test();
+        testSign();
+    }
 
 }
